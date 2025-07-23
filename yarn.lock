@@ -788,6 +788,16 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@expo-google-fonts/bebas-neue@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/bebas-neue/-/bebas-neue-0.4.0.tgz#8c27260ff94d83258332fc64647614a5c682e97b"
+  integrity sha512-bvnEfW5Yaf6iTAVdDgLg5pTwCW8+eb4dk88FI9PDceOdbnUrymc1CGUCxTS1Suz+JMClrUS8aSaqaaHnXjyuqw==
+
+"@expo-google-fonts/inter@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/inter/-/inter-0.4.1.tgz#0240eb12dc906582358b2fbc4b5aabeed6a69d37"
+  integrity sha512-ypL+XokTHEG+ie/nxNj/mS38afMrY4Li4oKvTJf9k9XvH7I21qfTGCsDtlZ6nIUWEAy1odoUZISdXT1nfMh4kA==
+
 "@expo/cli@0.24.20":
   version "0.24.20"
   resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.24.20.tgz#c9a3ad7eb93b0d6a39da20ef8804976b65838790"
