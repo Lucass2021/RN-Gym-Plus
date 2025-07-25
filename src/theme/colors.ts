@@ -11,11 +11,14 @@ export const Colors = {
 } as const;
 
 export const generateColorClasses = (prefix: string) =>
-  Object.keys(Colors).reduce((acc, key) => {
-    const typedKey = key as keyof typeof Colors;
-    acc[typedKey] = `${prefix}-${key}`;
-    return acc;
-  }, {} as Record<keyof typeof Colors, string>);
+  Object.keys(Colors).reduce(
+    (acc, key) => {
+      const typedKey = key as keyof typeof Colors;
+      acc[typedKey] = `${prefix}-${key}`;
+      return acc;
+    },
+    {} as Record<keyof typeof Colors, string>,
+  );
 
 export const backgroundColors = generateColorClasses("bg");
 export const textColors = generateColorClasses("text");

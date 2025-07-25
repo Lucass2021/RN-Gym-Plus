@@ -1,14 +1,7 @@
-1 - Escolher Font - Ok
-2 - Instalar libs pendentes
-3 - Setup multi language
-4 - Terminar tela de intro
-5 - Criar tela de login
-
 Zustand
-Husky + Eslint
+Husky + Eslint + Prettier
 Tanstack Query
 Axios
 Zod + React Hook Form + hookform/resolvers
 React Native Transformer
-Babel Plugin Module Resolver
 Jest + Maestro

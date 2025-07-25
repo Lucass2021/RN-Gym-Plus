@@ -1,7 +1,7 @@
-import { Colors, textColors } from "@/theme/colors";
-import { ButonsText, Texts, Titles } from "@/theme/text";
+import {Colors, textColors} from "@/theme/colors";
+import {ButonsText, Texts, Titles} from "@/theme/text";
 import React from "react";
-import { Text, TextProps as RNTextProps } from "react-native";
+import {Text, TextProps as RNTextProps} from "react-native";
 
 interface TextProps extends RNTextProps {
   children: React.ReactNode;
@@ -23,7 +23,7 @@ export default function TextComponent({
 }: TextProps) {
   const generateFontFamilyAndWeight = (
     fontFamily: string,
-    fontWeight: string
+    fontWeight: string,
   ): string => {
     const fontMap = {
       Inter: {
@@ -66,8 +66,7 @@ export default function TextComponent({
         fontSize: customFontSizeAndLineHeight.fontSize,
         lineHeight: customFontSizeAndLineHeight.lineHeight,
       }}
-      {...props}
-    >
+      {...props}>
       {children}
     </Text>
   );
