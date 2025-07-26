@@ -17,6 +17,7 @@ import {useColorScheme} from "react-native";
 import "react-native-reanimated";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import "../src/global.css";
+import "../i18n";
 
 export {
   // Catch any errors thrown by the Layout component.

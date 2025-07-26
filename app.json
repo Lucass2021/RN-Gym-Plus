@@ -28,12 +28,22 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": ["expo-router", "expo-font"],
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-localization"
+    ],
     "experiments": {
       "typedRoutes": true
     },
     "packagerOpts": {
-      "sourceExts": ["js", "jsx", "svgx", "ts", "tsx"],
+      "sourceExts": [
+        "js",
+        "jsx",
+        "svgx",
+        "ts",
+        "tsx"
+      ],
       "transformer": "node_modules/react-native-svg-transformer/index.js"
     }
   }

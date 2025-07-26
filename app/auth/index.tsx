@@ -2,8 +2,11 @@ import TextComponent from "@/components/TextComponent";
 import {Image, TouchableOpacity, View} from "react-native";
 import backgroundImage from "@/assets/images/background-auth.jpg";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import {useTranslation} from "react-i18next";
 
 export default function Index() {
+  const {t} = useTranslation();
+
   const handleFirstAccess = () => {
     console.log("First acess");
   };
@@ -20,7 +23,7 @@ export default function Index() {
           fontWeight="Regular"
           fontSize="h3"
           customClassName="text-center">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          {t("intro.title")}
         </TextComponent>
 
         <TouchableOpacity
