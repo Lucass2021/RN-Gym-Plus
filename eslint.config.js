@@ -9,7 +9,7 @@ export default [
   js.configs.recommended,
 
   {
-    files: ["**/*.ts", "**/*.tsx"],
+    files: ["**/*.js", "**/*.ts", "**/*.tsx"],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -33,6 +33,7 @@ export default [
       "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "no-undef": "off",
     },
     settings: {
       react: {
