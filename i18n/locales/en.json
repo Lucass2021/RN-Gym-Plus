@@ -1,5 +1,16 @@
 {
   "intro": {
     "title": "Welcome to the app"
+  },
+  "auth": {
+    "title": "Welcome back! Sign in to continue",
+    "emailCustomInputTitle": "E-mail",
+    "emailCustomPlaceholder": "Insert your e-mail",
+    "passwordCustomInputTitle": "Password",
+    "passwordCustomPlaceholder": "Insert your password",
+    "forgorPassword": "Forgot password?",
+    "submitButton": "Sign in",
+    "sign-up-text-one": "Don't have an account?",
+    "sign-up-text-two": "Create an account?"
   }
 }
