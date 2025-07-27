@@ -1,3 +1,4 @@
+import {fontFamiltyEnum, fontWeightEnum} from "@/@types/fonts";
 import {Colors, textColors} from "@/theme/colors";
 import {ButonsText, Texts, Titles} from "@/theme/text";
 import React from "react";
@@ -6,8 +7,8 @@ import {Text, TextProps as RNTextProps} from "react-native";
 interface TextProps extends RNTextProps {
   children: React.ReactNode;
   color: keyof typeof textColors;
-  fontFamily: "Inter" | "BebasNeue";
-  fontWeight: "Light" | "Regular" | "Medium" | "SemiBold" | "Bold";
+  fontFamily: fontFamiltyEnum;
+  fontWeight: fontWeightEnum;
   fontSize: keyof typeof Titles | keyof typeof Texts | keyof typeof ButonsText;
   customClassName?: string;
 }

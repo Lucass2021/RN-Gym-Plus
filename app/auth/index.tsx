@@ -3,12 +3,16 @@ import {Image, TouchableOpacity, View} from "react-native";
 import backgroundImage from "@/assets/images/background-auth.jpg";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import {useTranslation} from "react-i18next";
+import {router} from "expo-router";
+import {useAuthActions} from "@/store/auth";
 
 export default function Index() {
   const {t} = useTranslation();
+  const {setFirstAccess} = useAuthActions();
 
   const handleFirstAccess = () => {
-    console.log("First acess");
+    setFirstAccess(true);
+    router.replace("/auth/sign-in");
   };
 
   return (

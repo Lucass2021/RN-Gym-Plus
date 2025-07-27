@@ -46,6 +46,10 @@ export const Texts = {
     fontSize: 14,
     lineHeight: 22,
   },
+  error: {
+    fontSIze: 12,
+    lineHeight: 14,
+  },
 };
 
 export const ButonsText = {
