@@ -4,6 +4,8 @@
   },
   "auth": {
     "title": "Bem vindo de volta! Faça login para continuar",
+    "emailZodError": "Email inválido",
+    "passwordZodError": "Informe sua senha",
     "emailCustomInputTitle": "E-mail",
     "emailCustomPlaceholder": "Digite seu e-mail",
     "passwordCustomInputTitle": "Senha",

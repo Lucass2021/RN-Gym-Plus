@@ -14,15 +14,14 @@ import {
 } from "react-native";
 import {z} from "zod";
 
-const signInFormSchema = z.object({
-  email: z.email("Email inválido"),
-  password: z.string().min(5, {message: "Informe sua senha"}),
-});
-
-type SignInForm = z.infer<typeof signInFormSchema>;
-
 export default function SignIn() {
   const {t} = useTranslation();
+  const signInFormSchema = z.object({
+    email: z.email(t("auth.emailZodError")),
+    password: z.string().min(5, {message: t("auth.passwordZodError")}),
+  });
+
+  type SignInForm = z.infer<typeof signInFormSchema>;
 
   const form = useForm<SignInForm>({
     resolver: zodResolver(signInFormSchema),
@@ -76,6 +75,10 @@ export default function SignIn() {
                 autoCapitalize="none"
                 autoComplete="off"
                 autoCorrect={false}
+                iconName="favorite"
+                iconColor="accent"
+                iconHeight={20}
+                iconWidth={20}
               />
               <Input
                 name="password"
@@ -83,6 +86,9 @@ export default function SignIn() {
                 customPlaceholder={t("auth.passwordCustomPlaceholder")}
                 keyboardType="default"
                 secureTextEntry
+                iconNameAntDesign="lock"
+                iconSizeAntDesign={20}
+                iconColorAntDesign="accent"
               />
 
               <Pressable

@@ -1,18 +1,36 @@
-import {Ionicons} from "@expo/vector-icons";
+import {AntDesign, Ionicons} from "@expo/vector-icons";
 import {useRef, useState} from "react";
 import {useController, useFormContext} from "react-hook-form";
 import {
   TextInputProps as RnTextInputProps,
   TextInput,
+  TextStyle,
   TouchableOpacity,
   View,
 } from "react-native";
 import TextComponent from "../TextComponent";
+import {IconName} from "@/theme/icons";
+import CustomIcon from "../Icon";
+import {Colors} from "@/theme/colors";
+import CustomIconAntDesign from "../IconAntDesign";
+
+type AntDesignIconName = React.ComponentProps<typeof AntDesign>["name"];
 
 type InputProps = {
   name: string;
   customPlaceholder: string;
   customInputTitle: string;
+
+  iconName?: IconName;
+  iconColor?: keyof typeof Colors;
+  iconStrokeColor?: keyof typeof Colors;
+  iconWidth?: number;
+  iconHeight?: number;
+
+  iconNameAntDesign?: AntDesignIconName;
+  iconSizeAntDesign?: number;
+  iconColorAntDesign?: string | keyof typeof Colors;
+  iconStyle?: TextStyle;
 } & RnTextInputProps;
 
 export default function Input({
@@ -21,6 +39,14 @@ export default function Input({
   customInputTitle,
   secureTextEntry,
   className,
+  iconName,
+  iconColor,
+  iconWidth,
+  iconHeight,
+  iconNameAntDesign,
+  iconSizeAntDesign,
+  iconColorAntDesign,
+  iconStyle,
   ...props
 }: InputProps) {
   const [isSecure, setIsSecure] = useState(secureTextEntry ?? false);
@@ -37,6 +63,9 @@ export default function Input({
     defaultValue: "",
   });
 
+  const showCustomIcon = iconName !== undefined;
+  const showCustomIconAntDesign = iconNameAntDesign !== undefined;
+
   return (
     <View className="w-full mb-5">
       <TextComponent
@@ -49,6 +78,27 @@ export default function Input({
       </TextComponent>
       <View
         className={`flex-row items-center border rounded-2xl ${error ? "border-red-500" : "border-grayFour"}`}>
+        {showCustomIcon && (
+          <View className="ml-5 ">
+            <CustomIcon
+              iconName={iconName}
+              iconColor={iconColor || "primary"}
+              iconWidth={iconWidth || 20}
+              iconHeight={iconHeight || 20}
+            />
+          </View>
+        )}
+        {showCustomIconAntDesign && (
+          <View className="ml-5 ">
+            <CustomIconAntDesign
+              name={iconNameAntDesign}
+              size={iconSizeAntDesign}
+              color={iconColorAntDesign}
+              style={iconStyle}
+            />
+          </View>
+        )}
+
         <TextInput
           ref={textInputRef}
           className={`flex-1 font-TTInterphasesLight color-black text-base px-5 h-12  ${className}`}
