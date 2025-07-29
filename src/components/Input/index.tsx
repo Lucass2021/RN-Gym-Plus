@@ -7,6 +7,7 @@ import {
   TextStyle,
   TouchableOpacity,
   View,
+  Platform,
 } from "react-native";
 import TextComponent from "../TextComponent";
 import {IconName} from "@/theme/icons";
@@ -29,7 +30,7 @@ type InputProps = {
 
   iconNameAntDesign?: AntDesignIconName;
   iconSizeAntDesign?: number;
-  iconColorAntDesign?: string | keyof typeof Colors;
+  iconColorAntDesign?: keyof typeof Colors;
   iconStyle?: TextStyle;
 } & RnTextInputProps;
 
@@ -101,8 +102,10 @@ export default function Input({
 
         <TextInput
           ref={textInputRef}
-          className={`flex-1 font-TTInterphasesLight color-black text-base px-5 h-12  ${className}`}
+          className={`flex-1 font-TTInterphasesLight color-black text-base px-5 h-12 ${className}`}
           placeholder={customPlaceholder}
+          placeholderTextColor={Colors.gray}
+          style={Platform.OS === "ios" && {lineHeight: 16, fontSize: 14}}
           onChangeText={onChange}
           onBlur={onBlur}
           value={value}

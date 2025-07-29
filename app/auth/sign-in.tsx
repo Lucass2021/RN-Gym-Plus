@@ -75,10 +75,9 @@ export default function SignIn() {
                 autoCapitalize="none"
                 autoComplete="off"
                 autoCorrect={false}
-                iconName="favorite"
-                iconColor="accent"
-                iconHeight={20}
-                iconWidth={20}
+                iconNameAntDesign="user"
+                iconSizeAntDesign={20}
+                iconColorAntDesign="dark"
               />
               <Input
                 name="password"
@@ -88,7 +87,7 @@ export default function SignIn() {
                 secureTextEntry
                 iconNameAntDesign="lock"
                 iconSizeAntDesign={20}
-                iconColorAntDesign="accent"
+                iconColorAntDesign="dark"
               />
 
               <Pressable
