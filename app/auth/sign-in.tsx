@@ -47,10 +47,11 @@ export default function SignIn() {
     <KeyboardAvoidingView
       className="flex-1"
       behavior={Platform.OS === "ios" ? "padding" : "height"}>
-      <View className="flex-1  bg-white px-7.5 pt-40 pb-14">
+      <View className="flex-1 bg-white px-7.5">
         <ScrollView
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
+          className="pt-40 pb-14"
           contentContainerStyle={{
             flexGrow: 1,
             alignItems: "center",
