@@ -17,8 +17,8 @@ import {z} from "zod";
 export default function SignIn() {
   const {t} = useTranslation();
   const signInFormSchema = z.object({
-    email: z.email(t("auth.emailZodError")),
-    password: z.string().min(5, {message: t("auth.passwordZodError")}),
+    email: z.email(t("signIn.emailZodError")),
+    password: z.string().min(5, {message: t("signIn.passwordZodError")}),
   });
 
   type SignInForm = z.infer<typeof signInFormSchema>;
@@ -64,14 +64,14 @@ export default function SignIn() {
               fontWeight="Regular"
               fontSize="h3"
               customClassName="text-center">
-              {t("auth.title")}
+              {t("signIn.title")}
             </TextComponent>
 
             <FormProvider {...form}>
               <Input
                 name="email"
-                customInputTitle={t("auth.emailCustomInputTitle")}
-                customPlaceholder={t("auth.emailCustomPlaceholder")}
+                customInputTitle={t("signIn.emailCustomInputTitle")}
+                customPlaceholder={t("signIn.emailCustomPlaceholder")}
                 keyboardType="email-address"
                 autoCapitalize="none"
                 autoComplete="off"
@@ -82,8 +82,8 @@ export default function SignIn() {
               />
               <Input
                 name="password"
-                customInputTitle={t("auth.passwordCustomInputTitle")}
-                customPlaceholder={t("auth.passwordCustomPlaceholder")}
+                customInputTitle={t("signIn.passwordCustomInputTitle")}
+                customPlaceholder={t("signIn.passwordCustomPlaceholder")}
                 keyboardType="default"
                 secureTextEntry
                 iconNameAntDesign="lock"
@@ -99,14 +99,14 @@ export default function SignIn() {
                   fontFamily="Inter"
                   fontWeight="SemiBold"
                   fontSize="paragraphOne">
-                  {t("auth.forgorPassword")}
+                  {t("signIn.forgorPassword")}
                 </TextComponent>
               </Pressable>
             </FormProvider>
 
             <View className="w-full mt-5">
               <Button
-                text={t("auth.submitButton")}
+                text={t("signIn.submitButton")}
                 onPress={() => handleSubmit(handleSignIn)()}
                 disabled={false}
               />
@@ -120,14 +120,14 @@ export default function SignIn() {
               fontWeight="Regular"
               fontSize="subtitleOne"
               customClassName="text-center">
-              {t("auth.sign-up-text-one")}{" "}
+              {t("signIn.sign-up-text-one")}{" "}
               <TextComponent
                 color="primaryDark"
                 fontFamily="Inter"
                 fontWeight="Regular"
                 fontSize="subtitleOne"
                 customClassName="underline">
-                {t("auth.sign-up-text-two")}
+                {t("signIn.sign-up-text-two")}
               </TextComponent>
             </TextComponent>
           </Pressable>

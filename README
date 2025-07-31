@@ -1,7 +1,24 @@
-Zustand
-Husky + Eslint + Prettier
-Tanstack Query
-Axios
-Zod + React Hook Form + hookform/resolvers
-React Native Transformer
-Jest + Maestro
+App - Usuário loga
+App - Usuário consegue visualizar as academias cadastradas pela parte web
+App - Usuário consegue pagar mensalidade para começar na academia
+Web consegue liberar permissão para usuário acessar academia (concede X plano)
+Web consegue liberar testes gratis da academia
+Web consegue liberar promoção para novos usuários
+Web consegue cadastrar planos
+App - Usuário pode visualizar quantas pessoas tem na academia
+App - Usuário tem seu treino atual registrado
+App - Usuário consegue agendar treinos com personais
+App - Usuário consegue marcar treinos experimentais se disponíveis
+App - Usuário consegue visualizar horario da academia
+Web consegue definir horario da academia
+Web é questionado com antecedencia se vai trabalhar em feriados
+App é avisado com antecedencia se as academias vão operar em feriados
+App consegue visualizar a execução correta nos aparelhos na academia
+App consegue visualizar aparelhos disponíveis na academia
+App consegue visualizar aparelhos em uso na academia
+App consegue filtrar aparelhos por grupos musculares
+App consegue pedir para revisar aparelhos na academia
+App registra seu progresso de carga
+Web consegue bonificar usuários conforme streaks de presença e preferência pela sua academia
+App possui streaks de presença de treino
+App possui streaks de vinculo com academias

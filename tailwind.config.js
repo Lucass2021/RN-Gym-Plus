@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       padding: {
         7.5: "30px",
+        13: "50px",
       },
       colors: Colors,
     },

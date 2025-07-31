@@ -2,7 +2,7 @@
   "intro": {
     "title": "Welcome to the app"
   },
-  "auth": {
+  "signIn": {
     "title": "Welcome back! Sign in to continue",
     "emailZodError": "Invalid email",
     "passwordZodError": "Invalid password",
@@ -14,5 +14,18 @@
     "submitButton": "Sign in",
     "sign-up-text-one": "Don't have an account?",
     "sign-up-text-two": "Create an account?"
+  },
+  "signUp": {
+    "title": "Create an account",
+    "emailZodError": "Invalid email",
+    "passwordZodError": "Invalid password",
+    "confirmPasswordZodError": "Invalid password",
+    "emailCustomInputTitle": "E-mail",
+    "emailCustomPlaceholder": "Insert your e-mail",
+    "passwordCustomInputTitle": "Password",
+    "passwordCustomPlaceholder": "Insert your password",
+    "confirmPasswordCustomInputTitle": "Confirm Password",
+    "confirmPasswordCustomPlaceholder": "Insert your password again",
+    "submitButton": "Create an account"
   }
 }
