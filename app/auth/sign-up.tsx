@@ -10,13 +10,41 @@ import z from "zod";
 export default function SignUp() {
   const {t} = useTranslation();
 
-  const signUpFormSchema = z.object({
-    email: z.email(t("signUp.emailZodError")),
-    password: z.string().min(5, {message: t("signUp.passwordZodError")}),
-    confirmPassword: z
-      .string()
-      .min(5, {message: t("signUp.confirmPasswordZodError")}), // Fix validation
-  });
+  const signUpFormSchema = z
+    .object({
+      email: z.email(t("signUp.emailZodError")),
+      fullName: z
+        .string()
+        .min(1, {message: t("signUp.fullNameRequired")})
+        .min(3, {message: t("signUp.fullNameTooShort")}),
+      gender: z.enum(["male", "female", "other"]).refine(val => !!val, {
+        message: t("signUp.gender"),
+      }),
+      height: z.string().min(4, {message: t("signUp.heightZodError")}),
+      weight: z.string().min(2, {message: t("signUp.weightZodError")}),
+      trainingLevel: z
+        .enum(["beginner", "intermediate", "advanced"])
+        .refine(val => !!val, {
+          message: t("signUp.trainingLevel"),
+        }),
+      weeklyTrainingDays: z
+        .string()
+        .min(1, {message: t("signUp.weeklyMinTrainingDays")})
+        .max(7, {
+          message: t("signUp.weeklyMaxTrainingDays"),
+        }),
+      dateOfBirth: z
+        .string()
+        .min(11, {message: t("signUp.dateOfBirthZodError")}),
+      password: z.string().min(5, {message: t("signUp.passwordZodError")}),
+      confirmPassword: z
+        .string()
+        .min(5, {message: t("signUp.confirmPasswordZodError")}),
+    })
+    .refine(data => data.password === data.confirmPassword, {
+      message: t("signUp.passwordsDoNotMatch"),
+      path: ["confirmPassword"],
+    });
 
   type SignUpForm = z.infer<typeof signUpFormSchema>;
 
@@ -34,18 +62,6 @@ export default function SignUp() {
   const handleSignUp = (data: SignUpForm) => {
     console.log("data", data);
   };
-
-  // Outros campos:
-  // Nome completo
-  // Gênero (masculino, feminino, outro, prefiro não dizer)
-  // Data de nascimento (para calcular idade)
-  // Foto de perfil (opcional)
-
-  // Altura (cm)
-  // Peso atual (kg)
-  // Objetivo (ex: ganhar massa, emagrecer, manter)
-  // Nível de treino (iniciante, intermediário, avançado)
-  // Frequência semanal desejada (ex: 3x/semana)
 
   return (
     <KeyboardAvoidingView
