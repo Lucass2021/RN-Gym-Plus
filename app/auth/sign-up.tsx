@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import {SelectInput} from "@/components/SelectInput";
 import TextComponent from "@/components/TextComponent";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {FormProvider, useForm} from "react-hook-form";
@@ -12,11 +13,14 @@ export default function SignUp() {
 
   const signUpFormSchema = z
     .object({
-      email: z.email(t("signUp.emailZodError")),
       fullName: z
         .string()
         .min(1, {message: t("signUp.fullNameRequired")})
         .min(3, {message: t("signUp.fullNameTooShort")}),
+      email: z.email(t("signUp.emailZodError")),
+      dateOfBirth: z
+        .string()
+        .min(11, {message: t("signUp.dateOfBirthZodError")}),
       gender: z.enum(["male", "female", "other"]).refine(val => !!val, {
         message: t("signUp.gender"),
       }),
@@ -33,9 +37,6 @@ export default function SignUp() {
         .max(7, {
           message: t("signUp.weeklyMaxTrainingDays"),
         }),
-      dateOfBirth: z
-        .string()
-        .min(11, {message: t("signUp.dateOfBirthZodError")}),
       password: z.string().min(5, {message: t("signUp.passwordZodError")}),
       confirmPassword: z
         .string()
@@ -51,7 +52,14 @@ export default function SignUp() {
   const form = useForm<SignUpForm>({
     resolver: zodResolver(signUpFormSchema),
     defaultValues: {
+      fullName: "",
       email: "",
+      dateOfBirth: "",
+      gender: undefined,
+      height: "",
+      weight: "",
+      trainingLevel: undefined,
+      weeklyTrainingDays: "",
       password: "",
       confirmPassword: "",
     },
@@ -89,6 +97,16 @@ export default function SignUp() {
             <View className="mt-5">
               <FormProvider {...form}>
                 <Input
+                  name="fullName"
+                  customInputTitle={t("signUp.fullNameCustomInputTitle")}
+                  customPlaceholder={t("signUp.fullNameCustomPlaceholder")}
+                  keyboardType="default"
+                  autoCorrect={false}
+                  iconNameAntDesign="user"
+                  iconSizeAntDesign={20}
+                  iconColorAntDesign="dark"
+                />
+                <Input
                   name="email"
                   customInputTitle={t("signUp.emailCustomInputTitle")}
                   customPlaceholder={t("signUp.emailCustomPlaceholder")}
@@ -96,10 +114,30 @@ export default function SignUp() {
                   autoCapitalize="none"
                   autoComplete="off"
                   autoCorrect={false}
-                  iconNameAntDesign="user"
+                  iconNameAntDesign="mail"
                   iconSizeAntDesign={20}
                   iconColorAntDesign="dark"
                 />
+                <Input
+                  name="dateOfBirth"
+                  customInputTitle={t("signUp.dateOfBirthCustomInputTitle")}
+                  customPlaceholder={t("signUp.dateOfBirthCustomPlaceholder")}
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                  iconNameAntDesign="calendar"
+                  iconSizeAntDesign={20}
+                  iconColorAntDesign="dark"
+                  customMask="birthDate"
+                />
+
+                <SelectInput
+                  name="scope"
+                  options={[]}
+                  onChange={() => {}}
+                  label={"Teste"}
+                  required={true}
+                />
+
                 <Input
                   name="password"
                   customInputTitle={t("signUp.passwordCustomInputTitle")}

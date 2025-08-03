@@ -7260,6 +7260,11 @@ react-native-screens@~4.11.1:
     react-native-is-edge-to-edge "^1.1.7"
     warn-once "^0.1.0"
 
+react-native-select-dropdown@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-select-dropdown/-/react-native-select-dropdown-4.0.1.tgz#5789bdf60742f8ca881391e6f47a5b285ee407d8"
+  integrity sha512-t4se17kALFcPb9wMbxig5dS1BE3pWRC6HPuFlM0J2Y6yhB1GsLqboy6an6R9rML8pRuGIJIxL29cbwEvPQwKxQ==
+
 react-native-svg-transformer@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/react-native-svg-transformer/-/react-native-svg-transformer-1.5.1.tgz#04467563becbea65b8e576df7e33c9a9a86961e8"
