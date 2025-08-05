@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import {SelectInput} from "@/components/SelectInput";
+import SelectInput from "@/components/SelectInput";
 import TextComponent from "@/components/TextComponent";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {FormProvider, useForm} from "react-hook-form";
@@ -25,7 +25,9 @@ export default function SignUp() {
         message: t("signUp.gender"),
       }),
       height: z.string().min(4, {message: t("signUp.heightZodError")}),
+      isHeightInMeters: z.boolean(),
       weight: z.string().min(2, {message: t("signUp.weightZodError")}),
+      isWeightInKg: z.boolean(),
       trainingLevel: z
         .enum(["beginner", "intermediate", "advanced"])
         .refine(val => !!val, {
@@ -57,7 +59,9 @@ export default function SignUp() {
       dateOfBirth: "",
       gender: undefined,
       height: "",
+      isHeightInMeters: undefined,
       weight: "",
+      isWeightInKg: undefined,
       trainingLevel: undefined,
       weeklyTrainingDays: "",
       password: "",
@@ -69,6 +73,25 @@ export default function SignUp() {
 
   const handleSignUp = (data: SignUpForm) => {
     console.log("data", data);
+  };
+
+  const GenderData = {
+    data: [
+      {
+        label: "Male",
+        value: "male",
+      },
+      {
+        label: "Female",
+        value: "female",
+      },
+      {
+        label: "Other",
+        value: "other",
+      },
+    ],
+    title: "Gender",
+    placeholder: "Select your gender",
   };
 
   return (
@@ -131,11 +154,13 @@ export default function SignUp() {
                 />
 
                 <SelectInput
-                  name="scope"
-                  options={[]}
-                  onChange={() => {}}
-                  label={"Teste"}
-                  required={true}
+                  data={GenderData.data}
+                  title={GenderData.title}
+                  placeholder={GenderData.placeholder}
+                  name="gender"
+                  iconName="team"
+                  iconSize={20}
+                  iconColor="dark"
                 />
 
                 <Input
