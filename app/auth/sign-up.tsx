@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import {RadioInput} from "@/components/RadioInput";
 import SelectInput from "@/components/SelectInput";
 import TextComponent from "@/components/TextComponent";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -94,15 +95,24 @@ export default function SignUp() {
     placeholder: "Select your gender",
   };
 
+  const YesOrNoValuesHeight = [
+    {id: "heightYes", label: "Sim", value: "true"},
+    {id: "heightNo", label: "Não", value: "false"},
+  ];
+
+  const YesOrNoValuesWeight = [
+    {id: "weightYes", label: "Sim", value: "true"},
+    {id: "weightNo", label: "Não", value: "false"},
+  ];
+
   return (
     <KeyboardAvoidingView
       className="flex-1"
       behavior={Platform.OS === "ios" ? "padding" : "height"}>
-      <View className="flex-1 bg-white px-7.5">
+      <View className="flex-1 bg-white px-7.5 py-20">
         <ScrollView
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
-          className="pt-20"
           contentContainerStyle={{
             flexGrow: 1,
             alignItems: "center",
@@ -161,6 +171,44 @@ export default function SignUp() {
                   iconName="team"
                   iconSize={20}
                   iconColor="dark"
+                />
+
+                <RadioInput
+                  items={YesOrNoValuesHeight}
+                  label={"A altura é em metros?"}
+                  name="isHeightInMeters"
+                  required
+                />
+
+                <Input
+                  name="height"
+                  customInputTitle={"Altura"}
+                  customPlaceholder={"Informe sua altura"}
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                  iconNameAntDesign="arrowup"
+                  iconSizeAntDesign={20}
+                  iconColorAntDesign="dark"
+                  customMask="height"
+                />
+
+                <RadioInput
+                  items={YesOrNoValuesWeight}
+                  label={"O peso é em kg?"}
+                  name="isWeightInKg"
+                  required
+                />
+
+                <Input
+                  name="weight"
+                  customInputTitle={"Peso"}
+                  customPlaceholder={"Informe seu peso"}
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                  iconNameAntDesign="arrowdown"
+                  iconSizeAntDesign={20}
+                  iconColorAntDesign="dark"
+                  customMask="weight"
                 />
 
                 <Input
