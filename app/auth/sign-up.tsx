@@ -79,30 +79,65 @@ export default function SignUp() {
   const GenderData = {
     data: [
       {
-        label: "Male",
-        value: "male",
+        label: t("signUp.genderDataMaleLabel"),
+        value: t("signUp.genderDataMaleValue"),
       },
       {
-        label: "Female",
-        value: "female",
+        label: t("signUp.genderDataFemaleLabel"),
+        value: t("signUp.genderDataFemaleValue"),
       },
       {
-        label: "Other",
-        value: "other",
+        label: t("signUp.genderDataOtherLabel"),
+        value: t("signUp.genderDataOtherValue"),
       },
     ],
-    title: "Gender",
-    placeholder: "Select your gender",
+    title: t("signUp.genderDataTitle"),
+    placeholder: t("signUp.genderDataPlaceholder"),
+  };
+
+  const TrainingLevelData = {
+    data: [
+      {
+        label: t("signUp.genderDataMaleLabel"),
+        value: t("signUp.genderDataMaleValue"),
+      },
+      {
+        label: t("signUp.trainingLevelDataIntermediateLabel"),
+        value: t("signUp.trainingLevelDataIntermediateValue"),
+      },
+      {
+        label: t("signUp.trainingLevelDataAdvancedLabel"),
+        value: t("signUp.trainingLevelDataAdvancedValue"),
+      },
+    ],
+    title: t("signUp.trainingLevelDataTitle"),
+    placeholder: t("signUp.trainingLevelDataPlaceholder"),
   };
 
   const YesOrNoValuesHeight = [
-    {id: "heightYes", label: "Sim", value: "true"},
-    {id: "heightNo", label: "Não", value: "false"},
+    {
+      id: "heightYes",
+      label: t("signUp.YesOrNoValuesHeightYesLabel"),
+      value: "true",
+    },
+    {
+      id: "heightNo",
+      label: t("signUp.YesOrNoValuesHeightNoLabel"),
+      value: "false",
+    },
   ];
 
   const YesOrNoValuesWeight = [
-    {id: "weightYes", label: "Sim", value: "true"},
-    {id: "weightNo", label: "Não", value: "false"},
+    {
+      id: "weightYes",
+      label: t("signUp.YesOrNoValuesWeightYesLabel"),
+      value: "true",
+    },
+    {
+      id: "weightNo",
+      label: t("signUp.YesOrNoValuesWeightNoLabel"),
+      value: "false",
+    },
   ];
 
   return (
@@ -175,15 +210,14 @@ export default function SignUp() {
 
                 <RadioInput
                   items={YesOrNoValuesHeight}
-                  label={"A altura é em metros?"}
+                  label={t("signUp.radioInputHeightLabel")}
                   name="isHeightInMeters"
-                  required
                 />
 
                 <Input
                   name="height"
-                  customInputTitle={"Altura"}
-                  customPlaceholder={"Informe sua altura"}
+                  customInputTitle={t("signUp.heightCustomInputTitle")}
+                  customPlaceholder={t("signUp.heightCustomPlaceholder")}
                   keyboardType="numeric"
                   autoCorrect={false}
                   iconNameAntDesign="arrowup"
@@ -194,21 +228,45 @@ export default function SignUp() {
 
                 <RadioInput
                   items={YesOrNoValuesWeight}
-                  label={"O peso é em kg?"}
+                  label={t("signUp.radioInputWeightLabel")}
                   name="isWeightInKg"
-                  required
                 />
 
                 <Input
                   name="weight"
-                  customInputTitle={"Peso"}
-                  customPlaceholder={"Informe seu peso"}
+                  customInputTitle={t("signUp.weightCustomInputTitle")}
+                  customPlaceholder={t("signUp.weightCustomPlaceholder")}
                   keyboardType="numeric"
                   autoCorrect={false}
                   iconNameAntDesign="arrowdown"
                   iconSizeAntDesign={20}
                   iconColorAntDesign="dark"
                   customMask="weight"
+                />
+
+                <SelectInput
+                  data={TrainingLevelData.data}
+                  title={TrainingLevelData.title}
+                  placeholder={TrainingLevelData.placeholder}
+                  name="trainingLevel"
+                  iconName="team"
+                  iconSize={20}
+                  iconColor="dark"
+                />
+
+                <Input
+                  name="weeklyTrainingDays"
+                  customInputTitle={t(
+                    "signUp.weeklyTrainingDaysCustomInputTitle",
+                  )}
+                  customPlaceholder={t(
+                    "signUp.weeklyTrainingDaysCustomPlaceholder",
+                  )}
+                  keyboardType="numeric"
+                  autoCorrect={false}
+                  iconNameAntDesign="user"
+                  iconSizeAntDesign={20}
+                  iconColorAntDesign="dark"
                 />
 
                 <Input

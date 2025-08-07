@@ -14,5 +14,78 @@
     "submitButton": "Entrar",
     "sign-up-text-one": "Ainda não tem uma conta?",
     "sign-up-text-two": "Criar uma"
+  },
+  "signUp": {
+    "title": "Crie sua conta",
+
+    "fullNameRequired": "O nome completo é obrigatório",
+    "fullNameTooShort": "O nome completo é muito curto",
+    "fullNameCustomInputTitle": "Nome completo",
+    "fullNameCustomPlaceholder": "Digite seu nome completo",
+
+    "emailZodError": "E-mail inválido",
+    "emailCustomInputTitle": "E-mail",
+    "emailCustomPlaceholder": "Digite seu e-mail",
+
+    "dateOfBirthZodError": "Data de nascimento inválida",
+    "dateOfBirthCustomInputTitle": "Data de nascimento",
+    "dateOfBirthCustomPlaceholder": "Digite sua data de nascimento",
+
+    "gender": "Selecione um gênero",
+
+    "heightZodError": "Altura inválida",
+    "weightZodError": "Peso inválido",
+
+    "trainingLevel": "Selecione um nível de treino",
+
+    "weeklyMinTrainingDays": "Selecione pelo menos 1 dia de treino",
+    "weeklyMaxTrainingDays": "Você não pode treinar mais de 7 dias por semana",
+
+    "passwordZodError": "A senha deve ter no mínimo 5 caracteres",
+    "passwordCustomInputTitle": "Senha",
+    "passwordCustomPlaceholder": "Digite sua senha",
+
+    "confirmPasswordZodError": "Confirmação de senha obrigatória",
+    "confirmPasswordCustomInputTitle": "Confirmar senha",
+    "confirmPasswordCustomPlaceholder": "Digite sua senha novamente",
+
+    "passwordsDoNotMatch": "As senhas não coincidem",
+
+    "submitButton": "Criar conta",
+
+    "genderDataTitle": "Gênero",
+    "genderDataPlaceholder": "Selecione seu gênero",
+    "genderDataMaleLabel": "Masculino",
+    "genderDataMaleValue": "masculino",
+    "genderDataFemaleLabel": "Feminino",
+    "genderDataFemaleValue": "feminino",
+    "genderDataOtherLabel": "Outro",
+    "genderDataOtherValue": "outro",
+
+    "trainingLevelDataTitle": "Nível de treino",
+    "trainingLevelDataPlaceholder": "Selecione seu nível de treino",
+    "trainingLevelDataBegginnerLabel": "Iniciante",
+    "trainingLevelDataBegginnerValue": "iniciante",
+    "trainingLevelDataIntermediateLabel": "Intermediário",
+    "trainingLevelDataIntermediateValue": "intermediário",
+    "trainingLevelDataAdvancedLabel": "Avançado",
+    "trainingLevelDataAdvancedValue": "avançado",
+
+    "radioInputHeightLabel": "Sua altura está em metros?",
+    "YesOrNoValuesHeightYesLabel": "Sim",
+    "YesOrNoValuesHeightNoLabel": "Não",
+
+    "radioInputWeightLabel": "Seu peso está em quilos?",
+    "YesOrNoValuesWeightYesLabel": "Sim",
+    "YesOrNoValuesWeightNoLabel": "Não",
+
+    "heightCustomInputTitle": "Altura",
+    "heightCustomPlaceholder": "Digite sua altura",
+
+    "weightCustomInputTitle": "Peso",
+    "weightCustomPlaceholder": "Digite seu peso",
+
+    "weeklyTrainingDaysCustomInputTitle": "Dias de treino por semana",
+    "weeklyTrainingDaysCustomPlaceholder": "Digite quantos dias você treina por semana"
   }
 }

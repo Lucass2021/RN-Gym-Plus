@@ -16,30 +16,76 @@
     "sign-up-text-two": "Create an account?"
   },
   "signUp": {
-    "title": "Create an account",
+    "title": "Create your account",
+
     "fullNameRequired": "Full name is required",
     "fullNameTooShort": "Full name is too short",
-    "fullNameCustomInputTitle": "Full name",
-    "fullNameCustomPlaceholder": "Insert your full name",
-    "emailZodError": "Invalid email",
-    "emailCustomInputTitle": "E-mail",
-    "emailCustomPlaceholder": "Insert your e-mail",
+    "fullNameCustomInputTitle": "Full Name",
+    "fullNameCustomPlaceholder": "Enter your full name",
+
+    "emailZodError": "Invalid email address",
+    "emailCustomInputTitle": "Email",
+    "emailCustomPlaceholder": "Enter your email address",
+
     "dateOfBirthZodError": "Invalid date of birth",
-    "dateOfBirthCustomInputTitle": "Date of birth",
-    "dateOfBirthCustomPlaceholder": "Insert your date of birth",
-    "gender": "Select a gender",
-    "heightZodError": "Invalid height",
-    "weightZodError": "Invalid weight",
-    "trainingLevel": "Select a training level",
-    "weeklyMinTrainingDays": "Select at least one training day",
-    "weeklyMaxTrainingDays": "You can't train more than 7 days a week",
-    "passwordZodError": "Invalid password",
+    "dateOfBirthCustomInputTitle": "Date of Birth",
+    "dateOfBirthCustomPlaceholder": "Enter your date of birth",
+
+    "gender": "Please select a gender",
+
+    "heightZodError": "Invalid height value",
+    "weightZodError": "Invalid weight value",
+
+    "trainingLevel": "Please select a training level",
+
+    "weeklyMinTrainingDays": "You must select at least 1 training day",
+    "weeklyMaxTrainingDays": "You cannot train more than 7 days a week",
+
+    "passwordZodError": "Password must be at least 5 characters",
     "passwordCustomInputTitle": "Password",
-    "passwordCustomPlaceholder": "Insert your password",
-    "confirmPasswordZodError": "Invalid password",
+    "passwordCustomPlaceholder": "Enter your password",
+
+    "confirmPasswordZodError": "Confirmation password is required",
     "confirmPasswordCustomInputTitle": "Confirm Password",
-    "confirmPasswordCustomPlaceholder": "Insert your password again",
+    "confirmPasswordCustomPlaceholder": "Re-enter your password",
+
     "passwordsDoNotMatch": "Passwords do not match",
-    "submitButton": "Create an account"
+
+    "submitButton": "Create Account",
+
+    "genderDataTitle": "Gender",
+    "genderDataPlaceholder": "Select your gender",
+    "genderDataMaleLabel": "Male",
+    "genderDataMaleValue": "male",
+    "genderDataFemaleLabel": "Female",
+    "genderDataFemaleValue": "female",
+    "genderDataOtherLabel": "Other",
+    "genderDataOtherValue": "other",
+
+    "trainingLevelDataTitle": "Training Level",
+    "trainingLevelDataPlaceholder": "Select your training level",
+    "trainingLevelDataBegginnerLabel": "Beginner",
+    "trainingLevelDataBegginnerValue": "beginner",
+    "trainingLevelDataIntermediateLabel": "Intermediate",
+    "trainingLevelDataIntermediateValue": "intermediate",
+    "trainingLevelDataAdvancedLabel": "Advanced",
+    "trainingLevelDataAdvancedValue": "advanced",
+
+    "radioInputHeightLabel": "Is your height in meters?",
+    "YesOrNoValuesHeightYesLabel": "Yes",
+    "YesOrNoValuesHeightNoLabel": "No",
+
+    "radioInputWeightLabel": "Is your weight in kilograms?",
+    "YesOrNoValuesWeightYesLabel": "Yes",
+    "YesOrNoValuesWeightNoLabel": "No",
+
+    "heightCustomInputTitle": "Height",
+    "heightCustomPlaceholder": "Enter your height",
+
+    "weightCustomInputTitle": "Weight",
+    "weightCustomPlaceholder": "Enter your weight",
+
+    "weeklyTrainingDaysCustomInputTitle": "Weekly Training Days",
+    "weeklyTrainingDaysCustomPlaceholder": "Enter how many days you train per week"
   }
 }
