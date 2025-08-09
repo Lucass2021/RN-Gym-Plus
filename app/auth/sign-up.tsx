@@ -18,14 +18,14 @@ export default function SignUp() {
         .string()
         .min(1, {message: t("signUp.fullNameRequired")})
         .min(3, {message: t("signUp.fullNameTooShort")}),
-      email: z.email(t("signUp.emailZodError")),
+      email: z.string().email(t("signUp.emailZodError")),
       dateOfBirth: z
         .string()
-        .min(11, {message: t("signUp.dateOfBirthZodError")}),
+        .length(10, {message: t("signUp.dateOfBirthZodError")}),
       gender: z.enum(["male", "female", "other"]).refine(val => !!val, {
         message: t("signUp.gender"),
       }),
-      height: z.string().min(4, {message: t("signUp.heightZodError")}),
+      height: z.string().min(2, {message: t("signUp.heightZodError")}),
       isHeightInMeters: z.boolean(),
       weight: z.string().min(2, {message: t("signUp.weightZodError")}),
       isWeightInKg: z.boolean(),
@@ -70,8 +70,11 @@ export default function SignUp() {
     },
   });
 
-  const {handleSubmit} = form;
-
+  const {
+    handleSubmit,
+    formState: {errors},
+  } = form;
+  console.log("errors", errors);
   const handleSignUp = (data: SignUpForm) => {
     console.log("data", data);
   };
@@ -98,8 +101,8 @@ export default function SignUp() {
   const TrainingLevelData = {
     data: [
       {
-        label: t("signUp.genderDataMaleLabel"),
-        value: t("signUp.genderDataMaleValue"),
+        label: t("signUp.trainingLevelDataBegginnerLabel"),
+        value: t("signUp.trainingLevelDataBegginnerValue"),
       },
       {
         label: t("signUp.trainingLevelDataIntermediateLabel"),
@@ -118,12 +121,12 @@ export default function SignUp() {
     {
       id: "heightYes",
       label: t("signUp.YesOrNoValuesHeightYesLabel"),
-      value: "true",
+      value: true,
     },
     {
       id: "heightNo",
       label: t("signUp.YesOrNoValuesHeightNoLabel"),
-      value: "false",
+      value: false,
     },
   ];
 
@@ -131,12 +134,12 @@ export default function SignUp() {
     {
       id: "weightYes",
       label: t("signUp.YesOrNoValuesWeightYesLabel"),
-      value: "true",
+      value: true,
     },
     {
       id: "weightNo",
       label: t("signUp.YesOrNoValuesWeightNoLabel"),
-      value: "false",
+      value: false,
     },
   ];
 
@@ -203,9 +206,10 @@ export default function SignUp() {
                   title={GenderData.title}
                   placeholder={GenderData.placeholder}
                   name="gender"
-                  iconName="team"
-                  iconSize={20}
+                  iconName="favorite"
                   iconColor="dark"
+                  iconWidth={20}
+                  iconHeight={20}
                 />
 
                 <RadioInput
@@ -249,9 +253,10 @@ export default function SignUp() {
                   title={TrainingLevelData.title}
                   placeholder={TrainingLevelData.placeholder}
                   name="trainingLevel"
-                  iconName="team"
-                  iconSize={20}
+                  iconName="favorite"
                   iconColor="dark"
+                  iconWidth={20}
+                  iconHeight={20}
                 />
 
                 <Input

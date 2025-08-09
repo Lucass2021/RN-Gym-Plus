@@ -21,7 +21,7 @@ type AntDesignIconName = React.ComponentProps<typeof AntDesign>["name"];
 type InputProps = {
   name: string;
   customPlaceholder: string;
-  customInputTitle: string;
+  customInputTitle?: string;
   customMask?: "birthDate" | "weight" | "height";
   iconName?: IconName;
   iconColor?: keyof typeof Colors;
@@ -31,7 +31,7 @@ type InputProps = {
   iconNameAntDesign?: AntDesignIconName;
   iconSizeAntDesign?: number;
   iconColorAntDesign?: keyof typeof Colors;
-  iconStyle?: TextStyle;
+  iconStyleAntDesign?: TextStyle;
 } & RnTextInputProps;
 
 const applyMask = (
@@ -119,7 +119,7 @@ export default function Input({
   iconNameAntDesign,
   iconSizeAntDesign,
   iconColorAntDesign,
-  iconStyle,
+  iconStyleAntDesign,
   ...props
 }: InputProps) {
   const [isSecure, setIsSecure] = useState(secureTextEntry ?? false);
@@ -155,18 +155,25 @@ export default function Input({
 
   return (
     <View className="w-full mb-5">
-      <TextComponent
-        fontFamily="Inter"
-        fontWeight="Medium"
-        color={`${error ? "accent" : "dark"}`}
-        fontSize="paragraphTwo"
-        customClassName="mb-2">
-        {customInputTitle}
-      </TextComponent>
+      {customInputTitle && (
+        <TextComponent
+          fontFamily="Inter"
+          fontWeight="Medium"
+          color={`${error ? "accent" : "dark"}`}
+          fontSize="paragraphTwo"
+          customClassName="mb-2">
+          {customInputTitle}
+        </TextComponent>
+      )}
+
       <View
-        className={`flex-row items-center border rounded-2xl ${error ? "border-red-500" : "border-grayFour"}`}>
+        className={`
+        flex-row items-center border rounded-2xl 
+        ${error ? "border-red-500" : "border-grayFour"}
+        ${customInputTitle ? "mt-0" : "mt-5"}
+        `}>
         {showCustomIcon && (
-          <View className="ml-5 ">
+          <View className="ml-5">
             <CustomIcon
               iconName={iconName}
               iconColor={iconColor || "primary"}
@@ -176,12 +183,12 @@ export default function Input({
           </View>
         )}
         {showCustomIconAntDesign && (
-          <View className="ml-5 ">
+          <View className="ml-5">
             <CustomIconAntDesign
               name={iconNameAntDesign}
               size={iconSizeAntDesign}
               color={iconColorAntDesign}
-              style={iconStyle}
+              style={iconStyleAntDesign}
             />
           </View>
         )}

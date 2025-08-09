@@ -6,7 +6,7 @@ import TextComponent from "../TextComponent";
 export interface RadioItem {
   id: string;
   label: string;
-  value: string;
+  value: boolean;
 }
 
 interface RadioInputProps {
@@ -28,9 +28,9 @@ export function RadioInput({
 
   const renderRadioButton = (
     item: RadioItem,
-    selectedValue: string,
+    selectedValue: boolean,
     // eslint-disable-next-line no-unused-vars
-    onChange: (value: string) => void,
+    onChange: (value: boolean) => void,
   ) => {
     const isSelected = selectedValue === item.value;
 
@@ -82,10 +82,10 @@ export function RadioInput({
 
             {error && (
               <TextComponent
-                color="accent"
-                fontSize="error"
                 fontFamily="Inter"
-                fontWeight="Regular"
+                fontWeight="SemiBold"
+                color="accent"
+                fontSize="paragraphOne"
                 customClassName="mt-1">
                 {error.message}
               </TextComponent>
