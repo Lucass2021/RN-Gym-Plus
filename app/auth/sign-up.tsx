@@ -70,11 +70,8 @@ export default function SignUp() {
     },
   });
 
-  const {
-    handleSubmit,
-    formState: {errors},
-  } = form;
-  console.log("errors", errors);
+  const {handleSubmit} = form;
+
   const handleSignUp = (data: SignUpForm) => {
     console.log("data", data);
   };
@@ -206,7 +203,7 @@ export default function SignUp() {
                   title={GenderData.title}
                   placeholder={GenderData.placeholder}
                   name="gender"
-                  iconName="favorite"
+                  iconName="gender"
                   iconColor="dark"
                   iconWidth={20}
                   iconHeight={20}
@@ -224,10 +221,10 @@ export default function SignUp() {
                   customPlaceholder={t("signUp.heightCustomPlaceholder")}
                   keyboardType="numeric"
                   autoCorrect={false}
-                  iconNameAntDesign="arrowup"
-                  iconSizeAntDesign={20}
-                  iconColorAntDesign="dark"
-                  customMask="height"
+                  iconName="height"
+                  iconColor="dark"
+                  iconWidth={20}
+                  iconHeight={20}
                 />
 
                 <RadioInput
@@ -242,10 +239,10 @@ export default function SignUp() {
                   customPlaceholder={t("signUp.weightCustomPlaceholder")}
                   keyboardType="numeric"
                   autoCorrect={false}
-                  iconNameAntDesign="arrowdown"
-                  iconSizeAntDesign={20}
-                  iconColorAntDesign="dark"
-                  customMask="weight"
+                  iconName="weight"
+                  iconColor="dark"
+                  iconWidth={20}
+                  iconHeight={20}
                 />
 
                 <SelectInput
@@ -253,7 +250,7 @@ export default function SignUp() {
                   title={TrainingLevelData.title}
                   placeholder={TrainingLevelData.placeholder}
                   name="trainingLevel"
-                  iconName="favorite"
+                  iconName="training"
                   iconColor="dark"
                   iconWidth={20}
                   iconHeight={20}
