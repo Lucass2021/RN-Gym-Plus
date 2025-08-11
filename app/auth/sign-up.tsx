@@ -22,18 +22,23 @@ export default function SignUp() {
       dateOfBirth: z
         .string()
         .length(10, {message: t("signUp.dateOfBirthZodError")}),
-      gender: z.enum(["male", "female", "other"]).refine(val => !!val, {
-        message: t("signUp.gender"),
-      }),
+      gender: z
+        .string()
+        .refine(val => ["male", "female", "other"].includes(val ?? ""), {
+          message: t("signUp.gender"),
+        }),
       height: z.string().min(2, {message: t("signUp.heightZodError")}),
       isHeightInMeters: z.boolean(),
       weight: z.string().min(2, {message: t("signUp.weightZodError")}),
       isWeightInKg: z.boolean(),
       trainingLevel: z
-        .enum(["beginner", "intermediate", "advanced"])
-        .refine(val => !!val, {
-          message: t("signUp.trainingLevel"),
-        }),
+        .string()
+        .refine(
+          val => ["beginner", "intermediate", "advanced"].includes(val ?? ""),
+          {
+            message: t("signUp.trainingLevel"),
+          },
+        ),
       weeklyTrainingDays: z
         .string()
         .min(1, {message: t("signUp.weeklyMinTrainingDays")})
@@ -70,8 +75,11 @@ export default function SignUp() {
     },
   });
 
-  const {handleSubmit} = form;
-
+  const {
+    handleSubmit,
+    formState: {errors},
+  } = form;
+  console.log("errors", errors);
   const handleSignUp = (data: SignUpForm) => {
     console.log("data", data);
   };
