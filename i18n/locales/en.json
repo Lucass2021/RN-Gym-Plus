@@ -35,6 +35,8 @@
 
     "heightZodError": "Invalid height value",
     "weightZodError": "Invalid weight value",
+    "heightTypeZodError": "Select height type",
+    "weightTypeZodError": "Select weight type",
 
     "trainingLevel": "Please select a training level",
 

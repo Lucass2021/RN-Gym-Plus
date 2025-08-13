@@ -13,7 +13,6 @@ interface RadioInputProps {
   items: RadioItem[];
   label?: string;
   name: string;
-  required?: boolean;
   isFlexColumn?: boolean;
 }
 
@@ -21,7 +20,6 @@ export function RadioInput({
   items,
   label,
   name,
-  required,
   isFlexColumn,
 }: RadioInputProps) {
   const {control} = useFormContext();
@@ -63,10 +61,10 @@ export function RadioInput({
         <TextComponent
           fontFamily="Inter"
           fontWeight="Medium"
-          color={"dark"}
+          color="dark"
           fontSize="paragraphTwo"
           customClassName="mb-2">
-          {label} {required && "*"}
+          {label}
         </TextComponent>
       )}
 

@@ -159,7 +159,7 @@ export default function Input({
         <TextComponent
           fontFamily="Inter"
           fontWeight="Medium"
-          color={`${error ? "accent" : "dark"}`}
+          color="dark"
           fontSize="paragraphTwo"
           customClassName="mb-2">
           {customInputTitle}

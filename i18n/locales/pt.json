@@ -35,6 +35,8 @@
 
     "heightZodError": "Altura inválida",
     "weightZodError": "Peso inválido",
+    "heightTypeZodError": "Selecione um tipo de altura",
+    "weightTypeZodError": "Selecione um tipo de peso",
 
     "trainingLevel": "Selecione um nível de treino",
 

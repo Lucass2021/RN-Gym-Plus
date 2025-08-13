@@ -28,9 +28,9 @@ export default function SignUp() {
           message: t("signUp.gender"),
         }),
       height: z.string().min(2, {message: t("signUp.heightZodError")}),
-      isHeightInMeters: z.boolean(),
+      isHeightInMeters: z.boolean({message: t("signUp.heightTypeZodError")}),
       weight: z.string().min(2, {message: t("signUp.weightZodError")}),
-      isWeightInKg: z.boolean(),
+      isWeightInKg: z.boolean({message: t("signUp.weightTypeZodError")}),
       trainingLevel: z
         .string()
         .refine(
@@ -75,11 +75,8 @@ export default function SignUp() {
     },
   });
 
-  const {
-    handleSubmit,
-    formState: {errors},
-  } = form;
-  console.log("errors", errors);
+  const {handleSubmit} = form;
+
   const handleSignUp = (data: SignUpForm) => {
     console.log("data", data);
   };
