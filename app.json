@@ -9,41 +9,32 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "foregroundImage": "./assets/images/logo-text.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1F5F8A"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/logo-text.png",
+        "backgroundColor": "#1F5F8A"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.lucas.codex.gymplus"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      "expo-font",
-      "expo-localization"
-    ],
+    "plugins": ["expo-router", "expo-font", "expo-localization"],
     "experiments": {
       "typedRoutes": true
     },
     "packagerOpts": {
-      "sourceExts": [
-        "js",
-        "jsx",
-        "svgx",
-        "ts",
-        "tsx"
-      ],
+      "sourceExts": ["js", "jsx", "svgx", "ts", "tsx"],
       "transformer": "node_modules/react-native-svg-transformer/index.js"
     }
   }

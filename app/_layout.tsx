@@ -48,7 +48,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (fontsLoaded) {
-      SplashScreen.hideAsync();
+      // SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
 
@@ -62,21 +62,20 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
   const isLoggedIn = false;
+  // const isSplashScreenVisible = useIsSplashScreenVisible();
+  const isSplashScreenVisible = true;
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <StatusBar style="auto" />
       <Stack screenOptions={{headerShown: false}}>
-        <Stack.Screen
-          name="(app)"
-          redirect={!isLoggedIn}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="auth"
-          redirect={isLoggedIn}
-          options={{headerShown: false}}
-        />
+        {isSplashScreenVisible ? (
+          <Stack.Screen name="splash" options={{headerShown: false}} />
+        ) : !isLoggedIn ? (
+          <Stack.Screen name="auth" options={{headerShown: false}} />
+        ) : (
+          <Stack.Screen name="(app)" options={{headerShown: false}} />
+        )}
       </Stack>
     </ThemeProvider>
   );

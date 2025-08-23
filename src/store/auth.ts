@@ -8,6 +8,7 @@ const authStore = create(
       {
         isLoggedIn: false,
         isFirstAccess: true,
+        isSplashScreenVisible: true,
       },
       set => ({
         actions: {
@@ -15,6 +16,9 @@ const authStore = create(
           logout: () => set({isLoggedIn: false}),
           setFirstAccess: (firstAcessValue: boolean) =>
             set({isFirstAccess: firstAcessValue}),
+          setSplashScreenVisible: (splashScreenVisible: boolean) =>
+            set({isSplashScreenVisible: splashScreenVisible}),
+          resetSplashScreen: () => set({isSplashScreenVisible: true}),
         },
       }),
     ),
@@ -31,3 +35,6 @@ export const useAuthActions = () => authStore(state => state.actions);
 
 export const useIsLoggedIn = () => authStore(state => state.isLoggedIn);
 export const useisFirstAccess = () => authStore(state => state.isFirstAccess);
+
+export const useIsSplashScreenVisible = () =>
+  authStore(state => state.isSplashScreenVisible);
